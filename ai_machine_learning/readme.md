@@ -7,17 +7,9 @@
 - Model training and evaluation (36%)
 - Implementation and operation(20%)
 
-### fixing issue with ssl on mac os
-```
-brew update
-brew install openssl
-ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
-ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
-ln -s /usr/local/Cellar/openssl/1.0.2j/bin/openssl /usr/local/bin/
-
-test command:
-python
-import ssl
-
 ```
 
+### fixing issue with python build and apple sicilon on M3 chip, fix this issue by upgrade to pythone 3.11 which support apple silicon and arm architecture
+```
+arch -x86_64 pyenv install 3.11.9
+```
