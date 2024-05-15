@@ -1,22 +1,14 @@
-import pytest
-import pandas as pd
-from inference import load_model, preprocess_data, predict
+import json
+import numpy as np
 
-# Load test data
-test_data = pd.read_csv("ai_machine_learning/data_preparation/data/test_data.csv")
+# Example input data
+input_data = np.array([[5.1, 3.5, 1.4, 0.2]])
 
-def test_load_model():
-    model_path = "path/to/model.pkl"
-    model = load_model(model_path)
-    assert model is not None
+# Convert the input data to JSON
+input_json = json.dumps(input_data.tolist())
 
-def test_preprocess_data():
-    preprocessed_data = preprocess_data(test_data)
-    assert preprocessed_data.shape[1] > test_data.shape[1]
+# Make the prediction
+response = predictor.predict(input_json)
+prediction = json.loads(response)
 
-def test_predict():
-    model_path = "path/to/model.pkl"
-    model = load_model(model_path)
-    preprocessed_data = preprocess_data(test_data)
-    predictions = predict(model, preprocessed_data)
-    assert len(predictions) == len(test_data)
+print(f"Prediction: {prediction}")

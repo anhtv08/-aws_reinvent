@@ -50,4 +50,4 @@ estimator.fit(data_channels)
 # train_data = sagemaker_session.upload_file(path='s3://{bucket_name}/data/fraud-detection-data.csv')
 # data_channels = {'train': train_data}
 
-estimator.fit(data_channels)
+# estimator.fit(data_channels)

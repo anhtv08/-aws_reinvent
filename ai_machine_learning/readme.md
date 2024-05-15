@@ -13,3 +13,9 @@
 ```
 arch -x86_64 pyenv install 3.11.9
 ```
+
+
+### install aws on mac os
+
+pip install aws cli
+/Users/anhtrang/.local/bin/aws
